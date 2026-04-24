@@ -25,7 +25,7 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npx playwright test tests/login.spec.ts   # ✅ \ → / (Linux)
+      run: npx playwright test tests/E2E/.ts   # ✅ \ → / (Linux)
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
