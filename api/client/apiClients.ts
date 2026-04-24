@@ -1,10 +1,10 @@
+// api/client/apiClient.ts
 import { request } from '@playwright/test';
 
 export async function createApiClient() {
   return await request.newContext({
-    baseURL: 'https://dummyjson.com',
+    baseURL: 'https://practice.expandtesting.com',
     extraHTTPHeaders: {
-      Authorization: `Bearer TOKEN`,
       'Content-Type': 'application/json'
     }
   });

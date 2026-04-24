@@ -13,7 +13,7 @@ export default defineConfig({
     trace: 'on-first-retry',   // Enregistre une trace uniquement lors de la première relance après un échec
   },
 
-  //workers: 3, // Nombre de workers pour exécuter les tests en parallèle
+  workers: 3, // Nombre de workers pour exécuter les tests en parallèle
 
   //  Définition des projets pour différents navigateurs
   projects: [

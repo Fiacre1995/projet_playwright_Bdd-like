@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import users from '../data/users_valide.json';
-import usersInvalide from '../data/users_invalide.json';
-import { Given, When, Then } from '../utils/bdd';
-import { LoginPage } from '../pages/LoginPage';
-import { DashboardPage } from '../pages/DashboardPage';
+import users from '../../data/users_valide.json';
+import usersInvalide from '../../data/users_invalide.json';
+import { Given, When, Then } from '../../utils/bdd';
+import { LoginPage } from '../../pages/LoginPage';
+import { DashboardPage } from '../../pages/DashboardPage';
 
-test.describe('Login successfull', () => {
+test.describe('Login successfull @E2E', () => {
 
   for (const user of users) {
 
@@ -32,7 +32,7 @@ test.describe('Login successfull', () => {
 });
 
 
-test.describe('Login unsuccessful', () => {
+test.describe('Login unsuccessful @E2E', () => {
 
   for (const user of usersInvalide) {
 
