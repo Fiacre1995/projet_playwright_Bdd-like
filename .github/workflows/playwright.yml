@@ -33,7 +33,7 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npx playwright test --shard=${{ matrix.shard }}
+      run: npm run test:ci --shard=${{ matrix.shard }}
 
     - uses: actions/upload-artifact@v6
       if: ${{ !cancelled() }}
