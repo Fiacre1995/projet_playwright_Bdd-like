@@ -7,12 +7,17 @@ on:
     branches: [ main ]
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # ✅ force Node.js 24 pour toutes les actions
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1/4, 2/4, 3/4, 4/4]
 
     steps:
     - uses: actions/checkout@v5
@@ -28,11 +33,11 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npm run test:ci
+      run: npx playwright test --shard=${{ matrix.shard }}
 
     - uses: actions/upload-artifact@v6
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report
+        name: playwright-report-${{ strategy.job-index }}
         path: playwright-report/
         retention-days: 30
