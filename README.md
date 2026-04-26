@@ -7,6 +7,9 @@ npm install -D @types/node
 # Exécution par environnement
 $env:ENV="local"; npx playwright test
 
+# Exécuté des tests provenat de package.json
+
+
 # Liste de touts les tests du projet
 npx playwright test --list
 

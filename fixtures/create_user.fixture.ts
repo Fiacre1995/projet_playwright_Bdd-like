@@ -1,6 +1,8 @@
 // fixtures/user.fixture.ts
 import { test as base } from './api.fixture';
 import { createUserPayload } from '../data/user.factory';
+import { NotesAPI } from '../api/services/note.api';
+import { createApiClient } from '../api/client/apiClients';
 
 type Fixtures = {
   user: {
@@ -8,16 +10,15 @@ type Fixtures = {
     password: string;
     token: string;
   };
+  notesApi: NotesAPI;
 };
 
 export const test = base.extend<Fixtures>({
   user: async ({ userApi }, use) => {
     const payload = createUserPayload();
 
-    // register
     await userApi.register(payload);
 
-    // login
     const loginRes = await userApi.login(payload);
     const token = (await loginRes.json()).data.token;
 
@@ -31,7 +32,13 @@ export const test = base.extend<Fixtures>({
 
     // cleanup
     await userApi.delete(token);
-  }
+  },
+
+  notesApi: async ({ user }, use) => {
+    const client = await createApiClient(user.token);
+    await use(new NotesAPI(client));
+    await client.dispose();
+  },
 });
 
 export { expect } from '@playwright/test';

@@ -1,10 +1,12 @@
 import { expect, test } from '../../fixtures/create_user.fixture';
 import { DashboardPage } from '../../pages/notes/DashboardNotePage';    
-
+import notesMock from '../../data/notesMock.json';
+import erreurMock from '../../data/erreurMock.json';
+import { mockApi } from '../../utils/mockApi';
 
 test.describe('Mock @E2E', () => {
 
-    test('Des données', async ({ user, page }) => {
+    test('réseau - liste des notes', async ({ user, page }) => {
     const dashboardPage = new DashboardPage(page);
     console.log(user);
 
@@ -13,39 +15,7 @@ test.describe('Mock @E2E', () => {
         localStorage.setItem('token', token);
     }, user.token);
 
-    await page.route('**/notes/api/notes', async route => {
-        await route.fulfill({
-            status: 200,
-            contentType: 'application/json',
-            body: JSON.stringify({
-            success: true,
-            status: 200,
-            message: 'Notes successfully retrieved',
-            data: [
-                {
-                id: '69ea6400f34549029586b8b8',
-                title: 'Note mockée A',
-                description: 'Description A',
-                category: 'Home',
-                completed: true,
-                created_at: new Date().toISOString(),
-                updated_at: new Date().toISOString(),
-                user_id: 'mock-user-id'
-                },
-                {
-                id: '69ea6400f34549029586b8b9',
-                title: 'Note mockée B',
-                description: 'Description B',
-                category: 'Work',
-                completed: false,
-                created_at: new Date().toISOString(),
-                updated_at: new Date().toISOString(),
-                user_id: 'mock-user-id'
-                }
-            ]
-            })
-        });
-    });
+    await mockApi(page, '**/notes/api/notes', notesMock, 200);
 
     // 🔥 navigation
     await dashboardPage.navigate();
@@ -54,7 +24,7 @@ test.describe('Mock @E2E', () => {
     });
 
 
-    test('Réseau', async ({ user, page }) => {
+    test('Erreur', async ({ user, page }) => {
     const dashboardPage = new DashboardPage(page);
     console.log(user);
 
@@ -63,17 +33,7 @@ test.describe('Mock @E2E', () => {
         localStorage.setItem('token', token);
     }, user.token);
 
-    await page.route('**/notes/api/notes', async route => {
-        await route.fulfill({
-            status: 500,
-            contentType: 'application/json',
-            body: JSON.stringify({
-            success: false,
-            status: 500,
-            message: 'Internal Server Error'
-            })
-        });
-    });
+    await mockApi(page, '**/notes/api/notes', erreurMock, 500);
 
     // 🔥 navigation
     await dashboardPage.navigate();
