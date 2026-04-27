@@ -1,4 +1,5 @@
-import { expect, test } from '../../fixtures/create_user.fixture';
+//import { expect, test } from '../../fixtures/user.fixture';
+import { test, expect } from '../../utils/testHooks';
 import { DashboardPage } from '../../pages/notes/DashboardNotePage';    
 import { Given, Then, When } from '../../utils/bdd';
 

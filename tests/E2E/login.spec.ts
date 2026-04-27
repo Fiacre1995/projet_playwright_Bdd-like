@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import users from '../../data/users_valide.json';
-import usersInvalide from '../../data/users_invalide.json';
+import users from '../../data/json/users_valide.json';
+import usersInvalide from '../../data/json/users_invalide.json';
 import { Given, When, Then } from '../../utils/bdd';
 import { LoginPage } from '../../pages/LoginPage';
 import { DashboardPage } from '../../pages/DashboardPage';

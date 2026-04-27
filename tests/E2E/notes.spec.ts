@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
-import { createNotePayload } from '../../data/notes.factory';
-import { test } from '../../fixtures/create_user.fixture';
+import { createNotePayload } from '../../data/factory/notes.factory';
+import { test } from '../../fixtures/user.fixture';
 import { DashboardPage } from '../../pages/notes/DashboardNotePage';    
 import { Given, Then, When } from '../../utils/bdd';
 

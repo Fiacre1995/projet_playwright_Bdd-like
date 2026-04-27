@@ -1,0 +1,65 @@
+
+Tu es un expert Playwright avec TypeScript.
+
+Un test a échoué.
+
+RÈGLE IMPORTANTE :
+- La réponse API est considérée comme correcte
+- Tu dois corriger UNIQUEMENT le test
+- Tu dois appliquer la correction directement dans le code
+
+Erreur:
+Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText('Welcome 10')
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for getByText('Welcome 10')[22m
+
+
+Code:
+//import { expect, test } from '../../fixtures/user.fixture';
+import { test, expect } from '../../utils/testHooks';
+import { DashboardPage } from '../../pages/notes/DashboardNotePage';    
+import { Given, Then, When } from '../../utils/bdd';
+
+
+test.describe('Deconnexion @E2E', () => {
+
+    test('Utilisateur ui @Deconnexion', async ({ user, page }) => {
+        const dashboardPage = new DashboardPage(page);
+        console.log(user);
+
+        await Given("Authentification de l'utilisateur", async () => {
+                // 🔥 injection token dans navigateur (login sans UI)
+                await page.addInitScript((token) => {
+                    localStorage.setItem('token', token);
+                }, user.token);
+        });
+
+        await When("Clique sur le bouton de déconnexion", async () => {
+              // 🔥 navigation
+            await dashboardPage.navigate();
+            await dashboardPage.boutonDeconnexion();
+        });
+
+        await Then('Vérifieer redirection vers la page de login', async () => {
+            await expect(page.getByText('Welcome 10')).toBeVisible();
+        });
+        
+    });
+
+});
+
+
+
+Tâche obligatoire :
+1. Identifier l'erreur
+2. Corriger le test
+3. Retourner UNIQUEMENT le code corrigé (pas d'explication)
+
+Le code doit être complet et prêt à être copié.

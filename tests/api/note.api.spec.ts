@@ -1,7 +1,6 @@
 // tests/api/notes.spec.ts
-import { createNotePayload } from '../../data/notes.factory';
-import { test_notes, expect } from '../../fixtures/api.fixture';
-import { test } from '../../fixtures/create_user.fixture';
+import { createNotePayload } from '../../data/factory/notes.factory';
+import { test, expect } from '../../utils/testHooks';
 import { Given, Then, When } from '../../utils/bdd';
 
 

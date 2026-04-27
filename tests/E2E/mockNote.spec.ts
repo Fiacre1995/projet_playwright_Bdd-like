@@ -1,7 +1,7 @@
-import { expect, test } from '../../fixtures/create_user.fixture';
+import { expect, test } from '../../fixtures/user.fixture';
 import { DashboardPage } from '../../pages/notes/DashboardNotePage';    
-import notesMock from '../../data/notesMock.json';
-import erreurMock from '../../data/erreurMock.json';
+import notesMock from '../../data/mock/notesMock.json';
+import erreurMock from '../../data/mock/erreurMock.json';
 import { mockApi } from '../../utils/mockApi';
 import { Given, Then, When } from '../../utils/bdd';
 
