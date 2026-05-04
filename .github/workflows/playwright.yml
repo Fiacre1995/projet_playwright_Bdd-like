@@ -36,7 +36,7 @@ jobs:
       run: npm run test:ci --shard=${{ matrix.shard }}
 
     - name: Upload results to Xray
-      run: node xray/uploadResults.js
+      run: node xray/uploadResults.ts
 
     - uses: actions/upload-artifact@v6
       if: ${{ !cancelled() }}
