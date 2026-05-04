@@ -37,5 +37,9 @@ export default defineConfig({
   timeout: 60000,
   
   // Configuration du reporter pour générer un rapport HTML
-  reporter: [['html', { open: 'always' }]],
+  reporter: [
+    ['html', { open: 'always' }],
+    ['list'],
+    ['junit', { outputFile: 'reports/results.xml' }],
+  ],
 });

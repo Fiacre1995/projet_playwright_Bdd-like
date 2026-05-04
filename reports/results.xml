@@ -1,0 +1,226 @@
+<testsuites id="" name="" tests="22" failures="0" skipped="0" errors="0" time="47.1939">
+<testsuite name="tests\api\note.api.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Chromium" tests="3" failures="0" skipped="0" time="3.864" errors="0">
+<testcase name="CRUD Notes › Lister les notes" classname="tests\api\note.api.spec.ts" time="1.54">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887309086@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'c5429d0746bd41e09dee7d27b09a9d5900e67713eed841c8aa8674c59d31112b'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="CRUD Notes › Voir une note" classname="tests\api\note.api.spec.ts" time="1.235">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887310624@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'2f7664b4702a4f6c9bb9088d686f5bb53e626d4774164b1499b7911b048a5c9d'[39m
+}
+{
+  success: [33mtrue[39m,
+  status: [33m200[39m,
+  message: [32m'Note successfully retrieved'[39m,
+  data: {
+    id: [32m'69f8684f81124e02985a46f1'[39m,
+    title: [32m'Note_1777887311159'[39m,
+    description: [32m'description_1777887311160'[39m,
+    category: [32m'Home'[39m,
+    completed: [33mtrue[39m,
+    created_at: [32m'2026-05-04T09:35:11.302Z'[39m,
+    updated_at: [32m'2026-05-04T09:35:11.302Z'[39m,
+    user_id: [32m'69f8684e81124e02985a46e9'[39m
+  }
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="CRUD Notes › Supprimer une note" classname="tests\api\note.api.spec.ts" time="1.089">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887311885@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'5af4485a38444f889b5dfd79c8d59189777771a63ea44cc58ee9c1480aea2bc1'[39m
+}
+{ success: [33mtrue[39m, status: [33m200[39m, message: [32m'Note successfully deleted'[39m }
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\deconnexion.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Chromium" tests="1" failures="0" skipped="0" time="6.25" errors="0">
+<testcase name="Deconnexion @E2E › Utilisateur ui @Deconnexion" classname="tests\E2E\deconnexion.spec.ts" time="6.25">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887309130@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'ff01b802d61a4fcf98769d19bd9e83dacc6394e1489b473397cda97d168b3466'[39m
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\login.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Chromium" tests="3" failures="0" skipped="0" time="13.531" errors="0">
+<testcase name="Login successfull @E2E › Login test valide - Admin" classname="tests\E2E\login.spec.ts" time="6.205">
+</testcase>
+<testcase name="Login unsuccessful @E2E › Login test - Admin" classname="tests\E2E\login.spec.ts" time="3.15">
+</testcase>
+<testcase name="Login unsuccessful @E2E › Login test - user1" classname="tests\E2E\login.spec.ts" time="4.176">
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\mockNote.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Chromium" tests="2" failures="0" skipped="0" time="5.504" errors="0">
+<testcase name="Mock @E2E › réseau - liste des notes" classname="tests\E2E\mockNote.spec.ts" time="2.776">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887313007@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'bd29eb1f06dc4f37b403379e462f84a2b6fae48de93b4051ab269810a9ea4e16'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Mock @E2E › Erreur" classname="tests\E2E\mockNote.spec.ts" time="2.728">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887316008@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'66f542e96c23401682f6180831b21184b76d5ba6365d465ba6206711e36c2a37'[39m
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\notes.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Chromium" tests="2" failures="0" skipped="0" time="9.142" errors="0">
+<testcase name="Notes @E2E › création avec succès" classname="tests\E2E\notes.spec.ts" time="4.814">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887315597@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'a5114269c734403aaef71da97f9548e4de4824af48854befaa38398432191815'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Notes @E2E › création échouée" classname="tests\E2E\notes.spec.ts" time="4.328">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887320435@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'98c235f9f8a94cc0b4bfd977ec37d2290dea8308b32c4ad9bd91f6e2d256725f'[39m
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\api\note.api.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Firefox" tests="3" failures="0" skipped="0" time="4.162" errors="0">
+<testcase name="CRUD Notes › Lister les notes" classname="tests\api\note.api.spec.ts" time="2.037">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887320555@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'bfdbbfd901e44bc8a2a5c83bd46be41592d4fbd0ab8c46ad829f7219f1bc3975'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="CRUD Notes › Voir une note" classname="tests\api\note.api.spec.ts" time="1.041">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887322611@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'bb3a9faf50ba47b3a6ca8f3e4282e706ef245430fa144fee9652d795086e1791'[39m
+}
+{
+  success: [33mtrue[39m,
+  status: [33m200[39m,
+  message: [32m'Note successfully retrieved'[39m,
+  data: {
+    id: [32m'69f8685b81124e02985a4763'[39m,
+    title: [32m'Note_1777887323059'[39m,
+    description: [32m'description_1777887323059'[39m,
+    category: [32m'Personal'[39m,
+    completed: [33mtrue[39m,
+    created_at: [32m'2026-05-04T09:35:23.202Z'[39m,
+    updated_at: [32m'2026-05-04T09:35:23.202Z'[39m,
+    user_id: [32m'69f8685a81124e02985a475b'[39m
+  }
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="CRUD Notes › Supprimer une note" classname="tests\api\note.api.spec.ts" time="1.084">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887323679@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'bb688257c202471c8d243d40c8590dda0667b97ac98e49cf947799d3e10ae0b8'[39m
+}
+{ success: [33mtrue[39m, status: [33m200[39m, message: [32m'Note successfully deleted'[39m }
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\deconnexion.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Firefox" tests="1" failures="0" skipped="0" time="6.189" errors="0">
+<testcase name="Deconnexion @E2E › Utilisateur ui @Deconnexion" classname="tests\E2E\deconnexion.spec.ts" time="6.189">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887324877@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'655d5c59cb344792ba8c20354e61ac3e6fd8073569bb46188453840b52cb93fd'[39m
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\login.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Firefox" tests="3" failures="0" skipped="0" time="26.046" errors="0">
+<testcase name="Login successfull @E2E › Login test valide - Admin" classname="tests\E2E\login.spec.ts" time="8.534">
+</testcase>
+<testcase name="Login unsuccessful @E2E › Login test - Admin" classname="tests\E2E\login.spec.ts" time="9.967">
+</testcase>
+<testcase name="Login unsuccessful @E2E › Login test - user1" classname="tests\E2E\login.spec.ts" time="7.545">
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\mockNote.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Firefox" tests="2" failures="0" skipped="0" time="11.789" errors="0">
+<testcase name="Mock @E2E › réseau - liste des notes" classname="tests\E2E\mockNote.spec.ts" time="5.67">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887324799@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'ecdbe653140a41629b42d680d9f1f19f2646990a175642e2b70f05f2b21e0a6f'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Mock @E2E › Erreur" classname="tests\E2E\mockNote.spec.ts" time="6.119">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887331305@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'72023392222547859a5451234735b164dc743a124afc4cd9956890608fef73d5'[39m
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\E2E\notes.spec.ts" timestamp="2026-05-04T09:35:07.680Z" hostname="Firefox" tests="2" failures="0" skipped="0" time="14.778" errors="0">
+<testcase name="Notes @E2E › création avec succès" classname="tests\E2E\notes.spec.ts" time="8.656">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887332321@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'27b9e8e3c8db411e9fb63d62b1542aef91cc2e82b7d04104a0592d438ac83ba1'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Notes @E2E › création échouée" classname="tests\E2E\notes.spec.ts" time="6.122">
+<system-out>
+<![CDATA[{
+  email: [32m'test_1777887340995@mail.com'[39m,
+  password: [32m'12345678'[39m,
+  token: [32m'afe122ff3e374853b8c5ba1789b861450e92b06250b34914b4ce16a8bece2653'[39m
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

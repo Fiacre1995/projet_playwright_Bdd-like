@@ -35,6 +35,9 @@ jobs:
     - name: Run Playwright tests
       run: npm run test:ci --shard=${{ matrix.shard }}
 
+    - name: Upload results to Xray
+      run: node xray/uploadResults.js
+
     - uses: actions/upload-artifact@v6
       if: ${{ !cancelled() }}
       with:

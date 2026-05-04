@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:local": "cross-env ENV=local npx playwright test ./tests/",
-    "test:ci":    "cross-env ENV=ci npx playwright test ./tests/"
+    "test:ci": "cross-env ENV=ci npx playwright test ./tests/"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +20,8 @@
     "types": [
       "node"
     ]
+  },
+  "dependencies": {
+    "axios": "^1.16.0"
   }
 }
